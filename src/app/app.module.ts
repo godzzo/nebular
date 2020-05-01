@@ -5,7 +5,7 @@
  */
 
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +18,11 @@ import { LayoutThemeToggleComponent } from './layout-theme-toggle/layout-theme-t
 import { ComponentsOverlayComponent } from './components-list/components-overlay.component';
 import { ComponentsListComponent} from './components-list/components-list.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+
+import localeHu from '@angular/common/locales/hu';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeHu, 'hu-HU');
 
 @NgModule({
   imports: [
@@ -40,6 +45,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     LayoutThemeToggleComponent,
     ComponentsOverlayComponent,
     ComponentsListComponent,
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'hu-HU' },
   ],
   bootstrap: [ AppComponent ],
 })

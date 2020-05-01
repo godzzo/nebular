@@ -1,3 +1,4 @@
+import { DatepickerFormsService } from './datepicker-forms.service';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -15,6 +16,13 @@ const routes: Route[] = [
   {
     path: 'datepicker-forms.component',
     component: DatepickerFormsComponent,
+  },
+  {
+    path: 'datepicker-forms.component/:id',
+    component: DatepickerFormsComponent,
+    resolve  : {
+        record: DatepickerFormsService
+    }
   },
   {
     path: 'datepicker-showcase.component',
