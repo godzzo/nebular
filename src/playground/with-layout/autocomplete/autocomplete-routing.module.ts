@@ -1,3 +1,4 @@
+import { AutocompleteTestComponent } from './autocomplete-test.component';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -32,6 +33,10 @@ const routes: Route[] = [
   {
     path: 'autocomplete-active-first.component',
     component: AutocompleteActiveFirstComponent,
+  },
+  {
+    path: 'autocomplete-test.component',
+    component: AutocompleteTestComponent,
   },
 ];
 

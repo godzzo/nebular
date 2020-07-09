@@ -145,6 +145,12 @@ export const PLAYGROUND_COMPONENTS: ComponentLink[] = [
         component: 'AutocompleteActiveFirstComponent',
         name: 'Autocomplete Active First',
       },
+      {
+        path: 'autocomplete-test.component',
+        link: '/autocomplete/autocomplete-test.component',
+        component: 'AutocompleteTestComponent',
+        name: 'Autocomplete Test',
+      },
     ],
   },
   {
@@ -440,6 +446,12 @@ export const PLAYGROUND_COMPONENTS: ComponentLink[] = [
       {
         path: 'datepicker-forms.component',
         link: '/datepicker/datepicker-forms.component',
+        component: 'DatepickerFormsComponent',
+        name: 'Datepicker Forms',
+      },
+      {
+        path: 'datepicker-forms.component/:id',
+        link: '/datepicker/datepicker-forms.component/:id',
         component: 'DatepickerFormsComponent',
         name: 'Datepicker Forms',
       },

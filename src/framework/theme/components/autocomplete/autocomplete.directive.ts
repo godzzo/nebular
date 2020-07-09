@@ -74,6 +74,10 @@ import { NbOptionComponent } from '../option/option.component';
  *
  * @stacked-example(Active first, autocomplete/autocomplete-active-first.component)
  *
+ * Test.
+ *
+ * @stacked-example(Test, autocomplete/autocomplete-test.component)
+ *
  * */
 @Directive({
   selector: 'input[nbAutocomplete]',

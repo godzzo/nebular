@@ -1,3 +1,4 @@
+import { AutocompleteTestComponent } from './autocomplete-test.component';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -22,6 +23,7 @@ import { CommonModule } from '@angular/common';
     AutocompleteGroupComponent,
     AutocompleteCustomDisplayComponent,
     AutocompleteActiveFirstComponent,
+    AutocompleteTestComponent,
   ],
   exports: [
     AutocompleteShowcaseComponent,
@@ -29,6 +31,7 @@ import { CommonModule } from '@angular/common';
     AutocompleteGroupComponent,
     AutocompleteCustomDisplayComponent,
     AutocompleteActiveFirstComponent,
+    AutocompleteTestComponent,
   ],
   imports: [
     CommonModule,
