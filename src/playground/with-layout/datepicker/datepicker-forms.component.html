@@ -1,0 +1,46 @@
+<nb-card>
+  <nb-card-header>Reactive Form by Record</nb-card-header>
+  <nb-card-body>
+    <div
+      [formGroup]="formGroup"
+    >
+      <input
+        nbInput
+        placeholder="Pick Date"
+        [nbDatepicker]="formcontrolRec1"
+        formControlName="publicateDate"
+        [status]="!formGroup.controls.publicateDate.valid ? 'danger' : 'basic'"
+      >
+      <nb-datepicker #formcontrolRec1></nb-datepicker>
+    </div>
+    <div
+      [formGroup]="formGroup"
+    >
+      <input
+        nbInput
+        placeholder="Pick Date"
+        [nbDatepicker]="formcontrolRec2"
+        formControlName="expireDate"
+      >
+      <nb-datepicker #formcontrolRec2></nb-datepicker>
+    </div>
+  </nb-card-body>
+</nb-card>
+<!--
+<nb-card>
+  <nb-card-header>Reactive Form by Form Control</nb-card-header>
+  <nb-card-body>
+    <input nbInput placeholder="Pick Date" [nbDatepicker]="formcontrol" [formControl]="formControl">
+    <nb-datepicker #formcontrol></nb-datepicker>
+  </nb-card-body>
+</nb-card>
+-->
+<!--
+<nb-card>
+  <nb-card-header>Template Form</nb-card-header>
+  <nb-card-body>
+    <input nbInput placeholder="Form Picker" [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate">
+    <nb-datepicker #ngmodel></nb-datepicker>
+  </nb-card-body>
+</nb-card>
+-->

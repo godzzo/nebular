@@ -8,58 +8,12 @@ import { HttpClient } from '@angular/common/http';
  */
 
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
   selector: 'nb-datepicker-forms',
-  template: `
-    <nb-card>
-      <nb-card-header>Reactive Form by Record</nb-card-header>
-      <nb-card-body>
-        <div
-          [formGroup]="formGroup"
-        >
-          <input
-            nbInput
-            placeholder="Pick Date"
-            [nbDatepicker]="formcontrolRec1"
-            formControlName="publicateDate"
-          >
-          <nb-datepicker #formcontrolRec1></nb-datepicker>
-        </div>
-        <div
-          [formGroup]="formGroup"
-        >
-          <input
-            nbInput
-            placeholder="Pick Date"
-            [nbDatepicker]="formcontrolRec2"
-            formControlName="expireDate"
-          >
-          <nb-datepicker #formcontrolRec2></nb-datepicker>
-        </div>
-      </nb-card-body>
-    </nb-card>
-    <!--
-    <nb-card>
-      <nb-card-header>Reactive Form by Form Control</nb-card-header>
-      <nb-card-body>
-        <input nbInput placeholder="Pick Date" [nbDatepicker]="formcontrol" [formControl]="formControl">
-        <nb-datepicker #formcontrol></nb-datepicker>
-      </nb-card-body>
-    </nb-card>
-    -->
-    <!--
-    <nb-card>
-      <nb-card-header>Template Form</nb-card-header>
-      <nb-card-body>
-        <input nbInput placeholder="Form Picker" [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate">
-        <nb-datepicker #ngmodel></nb-datepicker>
-      </nb-card-body>
-    </nb-card>
-    -->
-  `,
+  templateUrl: 'datepicker-forms.component.html',
   styleUrls: ['./datepicker-example.scss'],
 })
 export class DatepickerFormsComponent {
@@ -125,7 +79,7 @@ export class DatepickerFormsComponent {
     formControls['id'] = this.record['id'];
     formControls['reqPlace'] = this.record['reqPlace'];
     formControls['reqType'] = this.record['reqType'];
-    formControls['publicateDate'] = this.parseDate(this.record['publicateDate']);
+    formControls['publicateDate'] = new FormControl(this.parseDate(this.record['publicateDate']), Validators.required);
     formControls['isExpire'] = this.record['isExpire'];
     formControls['expireDate'] = this.parseDate(this.record['expireDate']);
     formControls['title'] = this.record['title'];
