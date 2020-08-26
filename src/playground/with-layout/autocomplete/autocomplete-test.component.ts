@@ -1,3 +1,4 @@
+import { NbAutocompleteDirective } from './../../../framework/theme/components/autocomplete/autocomplete.directive';
 import { FormBuilder, FormGroup } from '@angular/forms';
 /**
  * @license
@@ -5,7 +6,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { FormControl } from '@angular/forms';
@@ -17,6 +18,17 @@ import { map, startWith } from 'rxjs/operators';
   templateUrl: './autocomplete-test.component.html',
 })
 export class AutocompleteTestComponent implements OnInit {
+
+  @ViewChild(NbAutocompleteDirective)
+  set popup(popup: NbAutocompleteDirective<any>) {
+    console.log('popup', popup);
+    setTimeout(() => {
+      popup.show();
+    }, 3000);
+    setTimeout(() => {
+      popup.hide();
+    }, 5000);
+  }
 
   options: any[];
   selectedOption: any;
@@ -53,6 +65,11 @@ export class AutocompleteTestComponent implements OnInit {
         map(filterString => this.filter(filterString)),
       );
 
+      setTimeout(() => {
+        this.formGroup.patchValue({
+          optionId: 3,
+        });
+      }, 1000);
   }
 
   private filter(value: string): string[] {
